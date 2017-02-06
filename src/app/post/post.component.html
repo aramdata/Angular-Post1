@@ -1,0 +1,14 @@
+<div class="thumbnail">
+  <img src="{{postModel.image}}" alt="{{postModel.title}}">
+  <div class="caption">
+    <h3>{{postModel.title}}</h3>
+    <p>{{postModel.body}}</p>
+    <p>
+      <button (click)="ShowLargImage(postModel)" class="btn btn-primary" role="button">larg</button>
+      <a href="#" class="btn btn-default" role="button">Button</a></p>
+  </div>
+</div>
+
+<div [class.hidden]="closeLargeImage" *ngIf="showLargImage" style="position: absolute;top: 0;right: 0;width: 500px;height: 500px;">
+  <img (click)="CloseLargImage()" src="{{showLargImage}}" alt="">
+</div>
